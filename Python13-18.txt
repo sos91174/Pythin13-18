@@ -1,0 +1,94 @@
+#13印出圖案
+for i in range(1,7):
+    print(" " * 3 * (6 - i) + " " * 44 + "* " * i * 2)
+
+for i in range(1,3):
+    print(" " * i + " " * 44 + "* " * 6 * 2)
+
+for i in range(1,7):
+    print(" " * 3 * (6 - i) + " " * 22 + "* " * i * 2 + " " * 6 + "* " * 6 * 2)
+
+for i in range(1,3):
+    print(" " * i + " " * 22 + "* " * 6 * 2 + " " * 6 + "* " * 6 * 2)
+
+for i in range(1,7):
+    print(" " * 3 * (6 - i) + "* " * i * 2 + " " * 6 + "* " * 6 * 2 + " " * 6 + "* " * 6 * 2)
+
+for i in range(1,3):
+    print(" " * i + "* " * 6 * 2 + " " * 6 + "* " * 6 * 2 + " " * 6 + "* " * 6 * 2)
+
+
+
+#14輸入成績 然後排序
+scores=[]
+for s in range(5):
+    inscore=input("請輸入學生的成績:")
+    scores.append(int(inscore))
+    
+scores.sort()
+print("\n成績由小到大排序:",scores)
+
+
+
+
+#15猜拳機
+import random
+while True:
+    cpu = random.randint(1,3)
+    player = int(input("請出剪刀[1] 石頭[2] 布[3]:"))
+    if player not in (1,2,3):
+        print('請輸入正確數字')
+        break
+    elif cpu == 1 and player == 2:
+        print('你出',(player),':','電腦出',(cpu),':','你贏了,恭喜')
+        break
+    elif cpu == 1 and player == 3:
+        print('你出',(player),':','電腦出',(cpu),':','你輸了,再來一次')
+        continue
+    elif cpu == 2 and player == 3:
+        print('你出',(player),':','電腦出',(cpu),':','你贏了,恭喜')
+        break
+    elif cpu == 2 and player == 1:
+        print('你出',(player),':','電腦出',(cpu),':','你輸了,再來一次')
+        continue
+    elif cpu == 3 and player == 1:
+        print('你出',(player),':','電腦出',(cpu),':','你贏了,恭喜')
+        break
+    elif cpu == 3 and player == 2:
+        print('你出',(player),':','電腦出',(cpu),':','你輸了,再來一次')
+        continue
+    else:
+        print('你出',(player),':','電腦出',(cpu),':','平手,再來一次')
+        continue
+
+
+#16
+answer = input("請輸入[好]的英文:(想退出的話請輸入QUIT)")
+
+while answer.upper() != "GOOD":
+    if answer.upper() == "QUIT":
+        print("我不玩了!")
+        break
+    answer = input("答錯了，請重新輸入[好]的英文:")
+else:
+        print("答對了!")
+
+
+
+#17溫度轉換
+def CtoF1(degreeC):
+    degreeF = degreeC * 1.8 +32
+    print('攝氏',degreeC,'度可以轉換成華氏',degreeF,'度')
+temC = eval(input('請輸入攝氏溫度:'))
+CtoF1(temC)
+
+
+
+#18
+def teaTime(dessert,drink = '紅茶'):  #teaTime是變數 可以隨便更改名字
+    print('我的甜點是:',dessert,'飲料是',drink)
+    
+teaTime('馬卡龍','咖啡')
+teaTime('帕尼尼')
+teaTime(drink='奶茶',dessert='三明治')
+teaTime('紅豆餅',drink = '綠茶')
